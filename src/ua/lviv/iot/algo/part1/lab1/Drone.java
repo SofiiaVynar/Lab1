@@ -17,7 +17,6 @@ public class Drone extends Aircraft{
     @Override
     public void getMaxFlyingDistance() {
         double maxDistance = ((double)batteryCapacity/energyConsumptionPerMinute)* maxSpeed;
-        System.out.println("Max flying distance:" + maxDistance+ "km");
     }
     @Override
     public void getMaxDeliveryWeight() {
