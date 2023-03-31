@@ -5,20 +5,22 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Helicopter {
+@ToString(callSuper = true)
+public class Helicopter extends Aircraft {
     private int id = 100;
     private String model;
     private int currentAltitude;
     private int maxAltitude;
     private int fuelCapacity;
     private int currentFuel;
-    private static Helicopter instance;
 
-    public static Helicopter getInstance() {
-        if (instance == null) {
-            instance = new Helicopter();
-        }
-        return instance;
+    public Helicopter(String manufacturer, int maxSpeed, String model, int currentAltitude, int maxAltitude, int fuelCapacity, int currentFuel) {
+        super (manufacturer, maxSpeed);
+        this.model = model;
+        this.currentAltitude = currentAltitude;
+        this.maxAltitude = maxAltitude;
+        this.fuelCapacity = fuelCapacity;
+        this.currentFuel = currentFuel;
     }
 
     public void takeOff() {
@@ -50,16 +52,12 @@ public class Helicopter {
         }
     }
 
-    public static void main(String[] args) {
-        Helicopter[] helicopters = {
-                new Helicopter(),
-                new Helicopter(100,"Fly-High", 500, 1000,100,100),
-                Helicopter.getInstance(),
-                Helicopter.getInstance()
-        };
+    @Override
+    public void getMaxFlyingDistance() {
+        double maxDistance = ((double)currentFuel/fuelCapacity)* maxSpeed;
+    }
 
-        for (Helicopter helicopter : helicopters) {
-            System.out.println(helicopter);
-        }
+    @Override
+    public void getMaxDeliveryWeight() {
     }
 }
