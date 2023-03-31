@@ -6,11 +6,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-abstract class Aircraft {
-    protected String manufacturer;
+abstract class Aircraft{
+    private String manufacturer;
     protected int maxSpeed;
-
-    public abstract void getMaxFlyingDistance();
-
-    public abstract void getMaxDeliveryWeight();
+    
+    public abstract int getMaxFlyingDistance();
+    
+    public abstract int getMaxDeliveryWeight();
 }

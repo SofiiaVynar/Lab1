@@ -35,7 +35,6 @@ public class Helicopter extends Aircraft {
         }
     }
 
-
     public void descend(int altitude) {
         if (currentAltitude - altitude < 0) {
             currentAltitude = 0;
@@ -43,7 +42,6 @@ public class Helicopter extends Aircraft {
             currentAltitude -= altitude;
         }
     }
-
     public void refuel(int fuel) {
         if (currentFuel + fuel > fuelCapacity) {
             currentFuel = fuelCapacity;
@@ -51,13 +49,13 @@ public class Helicopter extends Aircraft {
             currentFuel += fuel;
         }
     }
-
     @Override
-    public void getMaxFlyingDistance() {
-        double maxDistance = ((double)currentFuel/fuelCapacity)* maxSpeed;
+    public int getMaxFlyingDistance() {
+        return  (int)(currentFuel/fuelCapacity*maxSpeed);
     }
 
     @Override
-    public void getMaxDeliveryWeight() {
+    public int getMaxDeliveryWeight() {
+        return 0;
     }
 }

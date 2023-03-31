@@ -3,29 +3,24 @@ package ua.lviv.iot.algo.part1.lab1;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-public class AircraftManager {
+public class AircraftManager{
     private final List<Aircraft> aircraft = new LinkedList<>();
-
     public void addAircraft(Aircraft aircraft) {
         this.aircraft.add(aircraft);
     }
-
-    public List<Aircraft> findByManufacturer(String manufacturer) {
+    public List<Aircraft> findByManufacturer(String manufacturer){
         return aircraft.stream()
                 .filter(aircraft -> aircraft.getManufacturer().equals(manufacturer))
                 .collect(Collectors.toList());
     }
-
     public List<Aircraft> findAllWithMoreMaxSpeedThan() {
         return aircraft.stream()
-                .filter(aircraft -> aircraft.getMaxSpeed() > 400)
+                .filter(aircraft -> aircraft.getMaxSpeed()>400)
                 .collect(Collectors.toList());
     }
-
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         AircraftManager aircraftManager = new AircraftManager();
-
 
         aircraftManager.addAircraft(new Helicopter("Fly-High", 500, "Tiny", 400, 700, 400, 300));
         aircraftManager.addAircraft(new Helicopter("Fly-High", 300, "Tin", 200, 500, 600, 400));

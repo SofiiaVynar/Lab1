@@ -15,11 +15,11 @@ public class Drone extends Aircraft{
         this.energyConsumptionPerMinute = energyConsumptionPerMinute;
     }
     @Override
-    public void getMaxFlyingDistance() {
-        double maxDistance = ((double)batteryCapacity/energyConsumptionPerMinute)* maxSpeed;
+    public int getMaxFlyingDistance() {
+        return (int) (batteryCapacity/energyConsumptionPerMinute * maxSpeed);
     }
     @Override
-    public void getMaxDeliveryWeight() {
-
+    public int getMaxDeliveryWeight() {
+        return 0;
     }
 }
