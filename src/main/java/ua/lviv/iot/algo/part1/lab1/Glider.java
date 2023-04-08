@@ -2,9 +2,9 @@ package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.ToString;
 @ToString(callSuper = true)
-public class Glider extends Aircraft{
-    private final int accelerationSpeed;
-    private final int wingChordLength;
+public class Glider extends Aircraft1{
+    private int accelerationSpeed;
+    private int wingChordLength;
     public Glider(String manufacturer, int maxSpeed, int accelerationSpeed, int wingChordLength) {
         super(manufacturer, maxSpeed);
         this.accelerationSpeed = accelerationSpeed;
