@@ -6,11 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
-<<<<<<< HEAD
 public class Drone extends Aircraft{
-=======
-public class Drone extends Aircraft1{
->>>>>>> parent of 0249248 (Initial Commit)
     private int batteryCapacity;
     private int energyConsumptionPerMinute;
     public Drone(String manufacturer, int maxSpeed, int batteryCapacity, int energyConsumptionPerMinute){
@@ -20,7 +16,7 @@ public class Drone extends Aircraft1{
     }
     @Override
     public int getMaxFlyingDistance() {
-        return (int) (batteryCapacity/energyConsumptionPerMinute * maxSpeed);
+        return batteryCapacity/energyConsumptionPerMinute * maxSpeed;
     }
     @Override
     public int getMaxDeliveryWeight() {
