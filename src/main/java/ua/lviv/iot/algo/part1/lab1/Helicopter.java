@@ -1,21 +1,28 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Helicopter extends Aircraft {
-    private int id = 100;
+    private static final int ID = 100;
     private String model;
     private int currentAltitude;
     private int maxAltitude;
     private int fuelCapacity;
     private int currentFuel;
+    private static final int AVERAGEALTITUDE = 100;
 
-    public Helicopter(String manufacturer, int maxSpeed, String model, int currentAltitude, int maxAltitude, int fuelCapacity, int currentFuel) {
-        super (manufacturer, maxSpeed);
+    public Helicopter(final String manufacturer, final int maxSpeed,
+                      final String model,
+                      final int currentAltitude, final int maxAltitude,
+                      final int fuelCapacity, final int currentFuel) {
+        super(manufacturer, maxSpeed);
         this.model = model;
         this.currentAltitude = currentAltitude;
         this.maxAltitude = maxAltitude;
@@ -24,10 +31,10 @@ public class Helicopter extends Aircraft {
     }
 
     public void takeOff() {
-        ascend(100);
+        ascend(AVERAGEALTITUDE);
     }
 
-    public void ascend(int altitude) {
+    public void ascend(final int altitude) {
         if (currentAltitude + altitude > maxAltitude) {
             currentAltitude = maxAltitude;
         } else {
@@ -35,14 +42,15 @@ public class Helicopter extends Aircraft {
         }
     }
 
-    public void descend(int altitude) {
+    public void descend(final int altitude) {
         if (currentAltitude - altitude < 0) {
             currentAltitude = 0;
         } else {
             currentAltitude -= altitude;
         }
     }
-    public void refuel(int fuel) {
+
+    public void refuel(final int fuel) {
         if (currentFuel + fuel > fuelCapacity) {
             currentFuel = fuelCapacity;
         } else {
@@ -52,7 +60,7 @@ public class Helicopter extends Aircraft {
 
     @Override
     public int getMaxFlyingDistance() {
-        return  (int)(currentFuel/fuelCapacity*maxSpeed);
+        return currentFuel / fuelCapacity * getMaxSpeed();
     }
 
     @Override
