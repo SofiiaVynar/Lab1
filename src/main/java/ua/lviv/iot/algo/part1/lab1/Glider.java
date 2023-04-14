@@ -1,21 +1,27 @@
 package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.ToString;
+
 @ToString(callSuper = true)
-public class Glider extends Aircraft{
+public class Glider extends Aircraft {
     private final int accelerationSpeed;
     private final int wingChordLength;
-    public Glider(String manufacturer, int maxSpeed, int accelerationSpeed, int wingChordLength) {
+    private static final int AVERAGEPOINT = 15;
+
+    public Glider(final String manufacturer, final int maxSpeed,
+                  final int accelerationSpeed, final int wingChordLength) {
         super(manufacturer, maxSpeed);
         this.accelerationSpeed = accelerationSpeed;
         this.wingChordLength = wingChordLength;
     }
+
     @Override
     public int getMaxFlyingDistance() {
-        return accelerationSpeed * wingChordLength*15;
+        return accelerationSpeed * wingChordLength * AVERAGEPOINT;
     }
+
     @Override
-    public int getMaxDeliveryWeight(){
+    public int getMaxDeliveryWeight() {
         return 0;
     }
 }
