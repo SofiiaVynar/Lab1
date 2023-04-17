@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.Manager;
+
+import ua.lviv.iot.algo.part1.lab1.Model.Aircraft;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.stream.Collectors;
 public class AircraftManager {
     private static final int WANTEDWEIGHT = 400;
 
-    List<Aircraft> getAircraft() {
+    public List<Aircraft> getAircraft() {
         return aircraft;
     }
 
@@ -26,7 +28,8 @@ public class AircraftManager {
 
     private final List<Aircraft> aircraft = new LinkedList<>();
 
-    void addAircraft(Aircraft aircraftList) {
+    public void addAircraft(Aircraft aircraftList) {
         this.aircraft.add(aircraftList);
     }
+
 }

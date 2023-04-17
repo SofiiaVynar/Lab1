@@ -1,7 +1,9 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.ModelTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.Model.Aircraft;
+import ua.lviv.iot.algo.part1.lab1.Model.Helicopter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.Model;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-abstract class Aircraft {
+public abstract class Aircraft {
     private String manufacturer;
     private int maxSpeed;
     public static final String HEADER = "manufacturer, maxSpeed";

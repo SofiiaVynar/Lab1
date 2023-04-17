@@ -1,7 +1,8 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.ModelTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.Model.Drone;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,7 +27,7 @@ class DroneTest {
     @Test
     public void testGetHeaders() {
         Drone drone = new Drone();
-        String expectedHeaders = "manufacturer, maxSpeed,batteryCapacity,energyConsumptionPerMinute";
+        String expectedHeaders = "manufacturer, maxSpeed, batteryCapacity, energyConsumptionPerMinute";
         assertEquals(expectedHeaders, drone.getHeaders());
     }
 

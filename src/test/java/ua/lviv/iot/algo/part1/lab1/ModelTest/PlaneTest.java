@@ -1,8 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.ModelTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import ua.lviv.iot.algo.part1.lab1.Model.Plane;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlaneTest {
     private Plane plane;
@@ -21,10 +23,11 @@ class PlaneTest {
     void testGetMaxDeliveryWeight() {
         assertEquals(1600, plane.getMaxDeliveryWeight());
     }
+
     @Test
     public void testGetHeaders() {
         Plane plane = new Plane();
-        String expectedHeaders = "manufacturer, maxSpeed,wingsSpan,weight";
+        String expectedHeaders = "manufacturer, maxSpeed, wingsSpan, weight";
         assertEquals(expectedHeaders, plane.getHeaders());
     }
 

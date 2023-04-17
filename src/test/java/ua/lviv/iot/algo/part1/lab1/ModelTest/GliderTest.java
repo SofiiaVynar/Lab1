@@ -1,8 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.ModelTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import ua.lviv.iot.algo.part1.lab1.Model.Glider;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GliderTest {
     private Glider glider;
@@ -21,10 +23,11 @@ class GliderTest {
     void testGetMaxDeliveryWeight() {
         assertEquals(0, glider.getMaxDeliveryWeight());
     }
+
     @Test
     public void testGetHeaders() {
         Glider glider = new Glider();
-        String expectedHeaders = "manufacturer, maxSpeed,accelerationSpeed,wingChordLength";
+        String expectedHeaders = "manufacturer, maxSpeed, accelerationSpeed, wingChordLength";
         assertEquals(expectedHeaders, glider.getHeaders());
     }
 
