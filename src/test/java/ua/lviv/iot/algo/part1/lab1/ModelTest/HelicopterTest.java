@@ -1,7 +1,8 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.ModelTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.Model.Helicopter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -54,16 +55,17 @@ class HelicopterTest {
     void testGetMaxDeliveryWeight() {
         assertEquals(0, helicopter.getMaxDeliveryWeight());
     }
+
     @Test
     public void testGetHeaders() {
         Helicopter helicopter = new Helicopter();
-        String expectedHeaders = "manufacturer, maxSpeed,ID,model,currentAltitude,maxAltitude,fuelCapacity,currentFuel";
+        String expectedHeaders = "manufacturer, maxSpeed, ID, model, currentAltitude, maxAltitude, fuelCapacity, currentFuel";
         assertEquals(expectedHeaders, helicopter.getHeaders());
     }
 
     @Test
     public void testToCSV() {
-        Helicopter helicopter = new Helicopter("Heli", 80, "Fin", 300, 320,1000, 500);
+        Helicopter helicopter = new Helicopter("Heli", 80, "Fin", 300, 320, 1000, 500);
         String expectedCSV = "Heli,80,100,Fin,300,320,1000,500";
         assertEquals(expectedCSV, helicopter.toCSV());
     }
